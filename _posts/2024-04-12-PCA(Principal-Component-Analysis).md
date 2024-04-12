@@ -205,12 +205,12 @@ d i tilda를 임의의 데이터들, d i bar를 모든 데이터들의 평균 d 
 그럼 이를 수식으로 풀어보도록 하겠습니다.
 
 
-$$min\ d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}\\ \Rightarrow \frac{1}{N}min\sum_{i}^{N}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})^{T}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})$$
+$$ min\ d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}\\ \Rightarrow \frac{1}{N}min\sum_{i}^{N}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})^{T}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}) $$
 
 
 
-$$min\ d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}\\\Rightarrow \frac{1}{N}min\sum_{i}^{N}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})^{T}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})\\=\frac{1}{N}\sum_{i}^{N}(d_{i}{d_{i}}^{T}-{d_{i}}^{T}\bar{u}\cdot{\bar{u}}^{T}d_{i}-{d_{i}^{T}}({d_{i}^{T}\bar{u}})\bar{u}+{d_{i}^{T}}\bar{u}\bar{u}^{T}({d_{i}^{T}\bar{u}}){\bar{u}})\\=-\frac{1}{N}\sum_{i}^{N}\bar{u}^{T}d_{i}\cdot{d_{i}}^{T}\bar{u}
-\\=-\bar{u}^{T}\frac{1}{N}\sum_{N}^{i}(\tilde{d}_{i}-\bar{d}_{i})(\tilde{d}_{i}-\bar{d}_{i})^{T}\bar{u}\\=-\bar {u}^{T}R_{d}\bar{u}$$
+$$ min\ d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}\\\Rightarrow \frac{1}{N}min\sum_{i}^{N}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})^{T}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})\\=\frac{1}{N}\sum_{i}^{N}(d_{i}{d_{i}}^{T}-{d_{i}}^{T}\bar{u}\cdot{\bar{u}}^{T}d_{i}-{d_{i}^{T}}({d_{i}^{T}\bar{u}})\bar{u}+{d_{i}^{T}}\bar{u}\bar{u}^{T}({d_{i}^{T}\bar{u}}){\bar{u}})\\=-\frac{1}{N}\sum_{i}^{N}\bar{u}^{T}d_{i}\cdot{d_{i}}^{T}\bar{u}
+\\=-\bar{u}^{T}\frac{1}{N}\sum_{N}^{i}(\tilde{d}_{i}-\bar{d}_{i})(\tilde{d}_{i}-\bar{d}_{i})^{T}\bar{u}\\=-\bar {u}^{T}R_{d}\bar{u} $$
 
 
 
