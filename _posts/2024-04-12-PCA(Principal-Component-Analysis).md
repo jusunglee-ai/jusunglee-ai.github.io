@@ -4,6 +4,7 @@ title: PCA(Principal Component Analysis)
 category: Mathmatics
 tag: [Linear-Algibra, Machine-Learning]
 toc: true
+use_math: true
 ---
 
 # PCA
