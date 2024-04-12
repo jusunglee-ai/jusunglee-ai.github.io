@@ -215,7 +215,8 @@ $$ min\ d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}\\\Rightarrow \frac{1}{N}min\su
 
 
 
-$$s.t\ R_{d}=\frac{1}{N}\sum_{N}^{i}(\tilde{d}_{i}-\bar{d}_{i})(\tilde{d}_{i}-\bar{d}_{i})^{T}\bar{u}$$
+
+$$ s.t\ R_{d}=\frac{1}{N}\sum_{N}^{i}(\tilde{d}_{i}-\bar{d}_{i})(\tilde{d}_{i}-\bar{d}_{i})^{T}\bar{u} $$
 
 
 
@@ -316,6 +317,6 @@ $$R_{d}\bar{u}=\lambda \bar{u}$$
 그래서 PCA에서 조건 1번 2번이 생긴거구나 라고 이해하면 됩니다.
 
 
-$$max\ \bar{u}^{T}R_{d}\bar{u}\ (R_{d}=\frac{1}{N}\sum_{i}^{N}\bar{d_{i}}-\bar{d_{i}^{T}})\\L=\bar{u}^{T}R_{d}\bar{u} +\lambda (1-\bar{u}^{T}\bar{u})\\dL_{\bar{u}}= d\bar{u}^{T}R_{d}\bar{u}+\bar{u}^{T}R_{d}d\bar{u}-\lambda d\bar{u}^{T}\bar{u}-\lambda \bar{u}^{T}d\bar{u}\\=2\bar{u}^{T}R_{d}d\bar{u}-2\lambda \bar{u}^{T}d\bar{u}\\=(2\bar{u}^{T}R_{d}-2\lambda \bar{u}^{T})d\bar{u} $$
+$$max\ \bar{u}^{T}R_{d}\bar{u}\ (R_{d}=\frac{1}{N}\sum_{i}^{N}\bar{d_{i}}-\bar{d_{i}^{T}})\\ \L=\bar{u}^{T}R_{d}\bar{u} +\lambda (1-\bar{u}^{T}\bar{u})\\ \dL_{\bar{u}}= d\bar{u}^{T}R_{d}\bar{u}+\bar{u}^{T}R_{d}d\bar{u}-\lambda d\bar{u}^{T}\bar{u}-\lambda \bar{u}^{T}d\bar{u} \\=2\bar{u}^{T}R_{d}d\bar{u}-2\lambda \bar{u}^{T}d\bar{u} \\=(2\bar{u}^{T}R_{d}-2\lambda \bar{u}^{T})d\bar{u} $$
 
 
