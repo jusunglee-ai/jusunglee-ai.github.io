@@ -4,7 +4,7 @@ title: PCA(Principal Component Analysis)
 category: Mathmatics
 tag: [Linear-Algibra, Machine-Learning]
 toc: true
-use_math: true
+
 
 ---
 
@@ -188,9 +188,9 @@ PCA는 고차원의 데이터를 저차원으로 데이터로 차원 축소를 �
 
 d i tilda를 임의의 데이터들, d i bar를 모든 데이터들의 평균 d i를 임의의 data에서 data들의 평균을 뺀 센터링 된 데이터라고 아래와 같이 가정해보도록 합시다.
 
-$$
- \tilde{d}_{i}=\begin{bmatrix} x_{i}\\ y_{i}\end{bmatrix}\bar{d}_{i}=\begin{bmatrix} \bar{x}_{i}\\ \bar{x}_{i}\end{bmatrix}d_{i}=\tilde{d}_{i}-\bar{d}_{i}
-$$
+
+ $$\tilde{d}_{i}=\begin{bmatrix} x_{i}\\ y_{i}\end{bmatrix}\bar{d}_{i}=\begin{bmatrix} \bar{x}_{i}\\ \bar{x}_{i}\end{bmatrix}d_{i}=\tilde{d}_{i}-\bar{d}_{i}$$
+
 
 두 번째로는 이 데이터들의 분포을 잘 나타내는 벡터 u를 구하는 것 입니다.
 
@@ -204,20 +204,20 @@ $$
 
 그럼 이를 수식으로 풀어보도록 하겠습니다.
 
-$$
-min\ d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}\\ \Rightarrow \frac{1}{N}min\sum_{i}^{N}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})^{T}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})
-$$
 
-$$
-min\ d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}\\\Rightarrow \frac{1}{N}min\sum_{i}^{N}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})^{T}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})\\=\frac{1}{N}\sum_{i}^{N}(d_{i}{d_{i}}^{T}-{d_{i}}^{T}\bar{u}\cdot{\bar{u}}^{T}d_{i}-{d_{i}^{T}}({d_{i}^{T}\bar{u}})\bar{u}+{d_{i}^{T}}\bar{u}\bar{u}^{T}({d_{i}^{T}\bar{u}}){\bar{u}})\\=-\frac{1}{N}\sum_{i}^{N}\bar{u}^{T}d_{i}\cdot{d_{i}}^{T}\bar{u}
-\\=-\bar{u}^{T}\frac{1}{N}\sum_{N}^{i}(\tilde{d}_{i}-\bar{d}_{i})(\tilde{d}_{i}-\bar{d}_{i})^{T}\bar{u}\\=-\bar {u}^{T}R_{d}\bar{u}
+$$min\ d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}\\ \Rightarrow \frac{1}{N}min\sum_{i}^{N}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})^{T}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})$$
 
-$$
 
-$$
-s.t\ R_{d}=\frac{1}{N}\sum_{N}^{i}(\tilde{d}_{i}-\bar{d}_{i})(\tilde{d}_{i}-\bar{d}_{i})^{T}\bar{u}
 
-$$
+$$min\ d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u}\\\Rightarrow \frac{1}{N}min\sum_{i}^{N}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})^{T}(d_{i}-{d_{i}}^{T}\cdot\bar{u}\cdot\bar{u})\\=\frac{1}{N}\sum_{i}^{N}(d_{i}{d_{i}}^{T}-{d_{i}}^{T}\bar{u}\cdot{\bar{u}}^{T}d_{i}-{d_{i}^{T}}({d_{i}^{T}\bar{u}})\bar{u}+{d_{i}^{T}}\bar{u}\bar{u}^{T}({d_{i}^{T}\bar{u}}){\bar{u}})\\=-\frac{1}{N}\sum_{i}^{N}\bar{u}^{T}d_{i}\cdot{d_{i}}^{T}\bar{u}
+\\=-\bar{u}^{T}\frac{1}{N}\sum_{N}^{i}(\tilde{d}_{i}-\bar{d}_{i})(\tilde{d}_{i}-\bar{d}_{i})^{T}\bar{u}\\=-\bar {u}^{T}R_{d}\bar{u}$$
+
+
+
+
+$$s.t\ R_{d}=\frac{1}{N}\sum_{N}^{i}(\tilde{d}_{i}-\bar{d}_{i})(\tilde{d}_{i}-\bar{d}_{i})^{T}\bar{u}$$
+
+
 
 그리고 위와 같은 수식을 Sample Covariance matrix이며, R_{d} 위와 같이 표현하도록 하겠습니다.
 
@@ -245,24 +245,24 @@ $$
 
 그럼 이를 라그랑주 승수법을 이용해서 풀어보도록 하겠습니다.
 
-$$
-max\ \bar{u}^{T}R_{d}\bar{u}\ (R_{d}=\frac{1}{N}\sum_{i}^{N}\bar{d_{i}}-\bar{d_{i}^{T}})\\L=\bar{u}^{T}R_{d}\bar{u} +\lambda (1-\bar{u}^{T}\bar{u})\\dL_{\bar{u}}= d\bar{u}^{T}R_{d}\bar{u}+\bar{u}^{T}R_{d}d\bar{u}-\lambda d\bar{u}^{T}\bar{u}-\lambda \bar{u}^{T}d\bar{u}\\=2\bar{u}^{T}R_{d}d\bar{u}-2\lambda \bar{u}^{T}d\bar{u}\\=(2\bar{u}^{T}R_{d}-2\lambda \bar{u}^{T})d\bar{u} 
-$$
+
+$$max\ \bar{u}^{T}R_{d}\bar{u}\ (R_{d}=\frac{1}{N}\sum_{i}^{N}\bar{d_{i}}-\bar{d_{i}^{T}})\\L=\bar{u}^{T}R_{d}\bar{u} +\lambda (1-\bar{u}^{T}\bar{u})\\dL_{\bar{u}}= d\bar{u}^{T}R_{d}\bar{u}+\bar{u}^{T}R_{d}d\bar{u}-\lambda d\bar{u}^{T}\bar{u}-\lambda \bar{u}^{T}d\bar{u}\\=2\bar{u}^{T}R_{d}d\bar{u}-2\lambda \bar{u}^{T}d\bar{u}\\=(2\bar{u}^{T}R_{d}-2\lambda \bar{u}^{T})d\bar{u} $$
+
 
 그리고 아래의 수식은 어떤 의미를 가지냐면 바로 L을 u로 미분한 값이라는 의미를 가지게 됩니다.
 
 그리고 이 값은 0이 되어야 하기 때문에 이 조건을 만족시키는 u 중에서 가장 maximaize하는 u를 선별하여 찾으면 우리는 끝이라는 겁니다.
 
-$$
-\frac{dL}{d\bar{u}^{T}}=(2\bar{u}^{T}R_{d}-2\lambda \bar{u}^{T})d\bar{u}\\
-=[\frac{dL}{du_{1}},\frac{dL}{du_{2}},\frac{dL}{du_{3}}...]=0
-$$
+
+$$\frac{dL}{d\bar{u}^{T}}=(2\bar{u}^{T}R_{d}-2\lambda \bar{u}^{T})d\bar{u}\\
+=[\frac{dL}{du_{1}},\frac{dL}{du_{2}},\frac{dL}{du_{3}}...]=0$$
+
 
 그럼 한번 찾아 보도록 합시다.
 
-$$
-(\bar{u}^{T}R_{d})^{T}=(\lambda \bar{u}^{T})^{T}\\\Rightarrow R_{d}\bar{u}=\lambda \bar{u}
-$$
+
+$$(\bar{u}^{T}R_{d})^{T}=(\lambda \bar{u}^{T})^{T}\\\Rightarrow R_{d}\bar{u}=\lambda \bar{u}$$
+
 
 어 그런데 보면 수식이 많이 익숙하지 않나요? 바로 eigen value와 eigen vector입니다. 그래서 PCA는 eigen value와 eigen vector의 확장 영역인 겁니다.
 
@@ -274,9 +274,9 @@ vector u는 R_d의 eigen vector이기 때문에 symetric하며 orhthogonal matri
 
 그럼 한번 전개해보도록 합시다.
 
-$$
-\bar{u}^{T}R_{d}\bar{u}=\bar{u}^{T}(\lambda_{1}q_{1}q_{1}^{T}+\lambda_{2}q_{2}q_{2}^{T}+...)\bar{u}
-$$
+
+$$\bar{u}^{T}R_{d}\bar{u}=\bar{u}^{T}(\lambda_{1}q_{1}q_{1}^{T}+\lambda_{2}q_{2}q_{2}^{T}+...)\bar{u}$$
+
 
 위의 전개된 수식에서 vector u는 R_d의 eigen vector이기 때문에 q_1, q_2 등등 중에 하나라는 의미 입니다.
 그리고 우리가 수식을 전개할 때 lambda_1과 lambda_2를 크기 순서대로 즉 내림차순으로 전개하였다면 vector u는 q1 q2 등등 중에서 어떤 q일 때 람다 값을 가장 크게 가질까요?
@@ -305,9 +305,9 @@ $$
 
 여기서 이 vector u가 두 벡터간의 차이를 최소화 하는 방향이 였다는 것 이였고 이 vector u는 covariance의 가장 큰 eigen value에 해당하는 eigen vecotr였다는 것 입니다.
 
-$$
-R_{d}\bar{u}=\lambda \bar{u}
-$$
+
+$$R_{d}\bar{u}=\lambda \bar{u}$$
+
 
 즉 분산이 가장 큰 방향이 우리가 찾고자하는 주성분 벡터였다는 것 입니다.
 
@@ -315,7 +315,7 @@ $$
 
 그래서 PCA에서 조건 1번 2번이 생긴거구나 라고 이해하면 됩니다.
 
-$$
-max\ \bar{u}^{T}R_{d}\bar{u}\ (R_{d}=\frac{1}{N}\sum_{i}^{N}\bar{d_{i}}-\bar{d_{i}^{T}})\\L=\bar{u}^{T}R_{d}\bar{u} +\lambda (1-\bar{u}^{T}\bar{u})\\dL_{\bar{u}}= d\bar{u}^{T}R_{d}\bar{u}+\bar{u}^{T}R_{d}d\bar{u}-\lambda d\bar{u}^{T}\bar{u}-\lambda \bar{u}^{T}d\bar{u}\\=2\bar{u}^{T}R_{d}d\bar{u}-2\lambda \bar{u}^{T}d\bar{u}\\=(2\bar{u}^{T}R_{d}-2\lambda \bar{u}^{T})d\bar{u} 
-$$
+
+$$max\ \bar{u}^{T}R_{d}\bar{u}\ (R_{d}=\frac{1}{N}\sum_{i}^{N}\bar{d_{i}}-\bar{d_{i}^{T}})\\L=\bar{u}^{T}R_{d}\bar{u} +\lambda (1-\bar{u}^{T}\bar{u})\\dL_{\bar{u}}= d\bar{u}^{T}R_{d}\bar{u}+\bar{u}^{T}R_{d}d\bar{u}-\lambda d\bar{u}^{T}\bar{u}-\lambda \bar{u}^{T}d\bar{u}\\=2\bar{u}^{T}R_{d}d\bar{u}-2\lambda \bar{u}^{T}d\bar{u}\\=(2\bar{u}^{T}R_{d}-2\lambda \bar{u}^{T})d\bar{u} $$
+
 
