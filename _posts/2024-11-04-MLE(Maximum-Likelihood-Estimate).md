@@ -15,7 +15,8 @@ math_use: true
 이번에는 MLE에 대해서 알아보도록 하겠습니다.
 
  MLE란? Maximum Likelihood Estimate의 약자로 이를 해석하자면 Likelihood의 최대 값을 보고 Estimate 즉, 추정하거나 예측 한다는 의미 입니다.
-
+Likelihood에 대한 정리는 제 블로그에 있으니 해당 링크로 가시면 보실 수 있습니다.
+[Probability vs Likelihood](https://jusunglee-ai.github.io/mathmatics/Probability-vs-Likelihood/)
  
 
 혁펜하임님의 Easy! 딥러닝 영상을 보신다면 좀 더 이해가 수월 하실거라고 생각 됩니다.
