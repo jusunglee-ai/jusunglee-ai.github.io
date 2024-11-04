@@ -104,9 +104,7 @@ Likelihood는 Probability와 다르게 어떤 distribution을 주었을 때 해�
 
 저는 인공지능을 공부하고 있고, 이 글을 보시는 분들도 아마도 인공지능을 공부하시는 분들인 것 같아, 예시를 머신러닝 관련으로 들어보도록 하겠습니다.        
 
-$
-\theta는\ parameter\ x_i는\ i번째 데이터\ X는 데이터 셋 전체\ \\  \mu는\ 평균\   \sigma는\ 분산을\ 의미합니다. 
-$
+$\theta는\ parameter\ x_i는\ i번째 데이터\ X는 데이터 셋 전체\ \\  \mu는\ 평균\   \sigma는\ 분산을\ 의미합니다. $
 
 그럼 해당 수식은 데이터 셋 X가  parameter에 속할 확률 즉 평균이 μ이고, 분산이 σ인 Normal(Gaussian) distribution에 속할 확률을 의미 합니다. 
 
