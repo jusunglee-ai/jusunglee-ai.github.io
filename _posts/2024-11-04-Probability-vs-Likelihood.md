@@ -126,4 +126,4 @@ Likelihood의 풀이 과정을 위에서 다루었는데, 이와 같이 Likeliho
 
 이렇게 Likelihood에 대해 설명을 마치도록 하겠습니다.
 
-[MLE(Maximum Likelihood Estimate)]([https://www.notion.so/MLE-Maximum-Likelihood-Estimate-134ec2bf4322808ca67cea2a95b996a3?pvs=21](https://jusunglee-ai.github.io/mathmatics/MLE/)
+
