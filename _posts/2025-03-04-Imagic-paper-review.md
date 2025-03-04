@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Imagic':' Text-Based Real Image Editing with Diffusion Models paper review(논문 리뷰)
+title: "Imagic: Text-Based Real Image Editing with Diffusion Models paper review(논문 리뷰)"
 category: DeepLearning
 tag: [논문 리뷰, Paper Review, DeepLearning]
 toc: true
